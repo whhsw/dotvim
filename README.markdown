@@ -23,8 +23,18 @@
 -   By default will try to look for "~/.vim/{USERNAME}_vimrc" for personal vim config
 
 
-## YouCompleteMe unavailable: requires Vim 7.3.584+
+YouCompleteMe unavailable: requires Vim 7.3.584+
 $ brew install macvim --override-system-vim
 
-# If you need the app bundle linked in /Applications...
+If you need the app bundle linked in /Applications...
 $ brew linkapps
+
+To Compile YCM
+$ brew install CMake
+$ cd ~/.vim/bundle/YouCompleteMe
+$ ./install.sh --clang-completer
+
+mv /usr/bin/vim /usr/bin/vim72
+ln -s /usr/local/bin/mvim usr/bin/vim
+
+Then use bundleinstall to install YCM 
